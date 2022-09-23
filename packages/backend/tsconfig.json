@@ -1,0 +1,15 @@
+
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "esnext", 
+    "module": "CommonJS", 
+    "moduleResolution": "node",
+    "sourceMap": true,  
+    "outDir": "./dist",  
+    "rootDir": "./", 
+    "removeComments": true, 
+    "strict": true,     
+    "esModuleInterop": true   
+  }
+}
