@@ -6,8 +6,7 @@
     "sourceMap": true,  
     "outDir": "./lib",  
     "rootDir": "./", 
-    "removeComments": true, 
-    "strict": true,     
+    "removeComments": true,   
     "esModuleInterop": true,
     "declaration": true
   },

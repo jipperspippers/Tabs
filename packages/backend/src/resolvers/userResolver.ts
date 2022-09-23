@@ -4,6 +4,7 @@ import User from '../models'
 const resolvers = {
     Query: {
         me: async(
+            root,
             args: {username:string},
             ): 
             Promise<UserDocument | null> =>{
@@ -13,11 +14,12 @@ const resolvers = {
 
     Mutation: {
         signUp: async(
-            args: {email: string; password:string},
+            root,
+            args: {email: string; password:string}
         ): Promise<UserDocument> =>{
 
             const user = await User.create(args)
-
+            console.log("added to server")
             return user
         }
     }

@@ -3,9 +3,7 @@ import { UserDocument } from '../types'
 
 const userSchema = new Schema(
     {
-        email:{
-            type: String
-        },
+        email:String,
         password: String
     }
 )

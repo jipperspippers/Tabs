@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "backend for tabs",
   "main": "./src/lib/server.js",
-  "type": "module",
   "scripts": {
     "start": "node ./lib/src/server.js",
     "dev": "nodemon -L ./lib/src/server.js",
