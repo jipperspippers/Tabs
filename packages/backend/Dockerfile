@@ -7,6 +7,6 @@ COPY ./ /tabs/
 RUN npm install
 RUN npm run build
 
-EXPOSE ${PORTS}giu
+EXPOSE ${PORTS}
 
 CMD ["npm", "dev"]
