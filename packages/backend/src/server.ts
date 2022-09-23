@@ -1,8 +1,4 @@
 import { ApolloServer } from 'apollo-server-express'
-import {
-    ApolloServerPluginDrainHttpServer,
-    ApolloServerPluginLandingPageLocalDefault,
-  } from 'apollo-server-core';
 import mongoose from 'mongoose'
 import express from 'express'
 import http from 'http'
