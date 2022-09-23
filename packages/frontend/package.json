@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "frontend for tabs",
   "main": "App.ts",
+  "type": "module",
   "directories": {
     "test": "test"
   },
@@ -23,7 +24,7 @@
   "homepage": "https://github.com/UTSCCSCC01/tabs#readme",
   "dependencies": {
     "expo": "^46.0.10",
-    "expo-cli": "^6.0.5",
+    "expo-cli": "^4.3.0",
     "react": "^18.2.0",
     "react-native": "^0.70.1"
   }

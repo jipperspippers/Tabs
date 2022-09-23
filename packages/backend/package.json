@@ -2,12 +2,13 @@
   "name": "tabs-backend",
   "version": "1.0.0",
   "description": "backend for tabs",
-  "main": "server.ts",
+  "main": "./src/lib/server.js",
+  "type": "module",
   "scripts": {
-    "start": "tsc && node server.ts",
-    "dev": "ts-node-dev --no-notify src",
+    "start": "node ./lib/src/server.js",
+    "dev": "nodemon -L ./lib/src/server.js",
     "build": "tsc -p tsconfig.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "npm run tsc"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,6 @@
     "url": "https://github.com/UTSCCSCC01/tabs/issues"
   },
   "homepage": "https://github.com/UTSCCSCC01/tabs#readme",
-  "type": "module",
   "dependencies": {
     "apollo-server": "^3.10.2",
     "apollo-server-express": "^3.10.2",
@@ -29,6 +29,9 @@
     "mongoose": "^6.6.1"
   },
   "devDependencies": {
+    "@types/node": "^18.7.18",
+    "@types/node-fetch": "^2.6.2",
+    "esm": "^3.2.25",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.8.3"
   }

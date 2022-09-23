@@ -1,3 +1,3 @@
 import user from './user'
-
-export default [user]
+import root from './root'
+export default [root,user]

@@ -1,15 +1,22 @@
 
 {
   "compilerOptions": {
-    /* Basic Options */
     "target": "esnext", 
-    "module": "CommonJS", 
+    "module": "commonjs",
+    "types": [
+      "node",
+      "express",
+    ],
     "moduleResolution": "node",
     "sourceMap": true,  
-    "outDir": "./dist",  
+    "outDir": "./lib",  
     "rootDir": "./", 
     "removeComments": true, 
     "strict": true,     
-    "esModuleInterop": true   
-  }
+    "esModuleInterop": true,
+    "declaration": true
+  },
+  "include": [
+    "./src"
+  ]
 }

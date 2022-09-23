@@ -5,7 +5,8 @@ RUN mkdir tabs
 WORKDIR /tabs
 COPY ./ /tabs/
 RUN npm install
-RUN echo "${DB_HOST} ${DB_USERNAME} ${DB_PASSWORD} ${HTTP_PORT}"
-EXPOSE ${PORTS}
+RUN npm run build
+
+EXPOSE ${PORTS}giu
 
 CMD ["npm", "dev"]

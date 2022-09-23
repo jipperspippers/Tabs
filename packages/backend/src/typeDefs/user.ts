@@ -1,14 +1,20 @@
-import gql from 'graphql-tag'
+import { gql } from 'apollo-server-express'
+
 
 export default gql`
-    type User{
-        email: String!
-        password: String!
-    }
+  extend type Query {
+    me: User
+  }
+  extend type Mutation {
+    signUp(
+      email: String!
+      password: String!
+    ): User
 
-    type Mutation{
-        signUp(inputEmail: String!, inputPassword:String!)
-        signIn(inputEmail: String!, inputPassword:String!): String!
-        }
+  }
+  type User {
+    email: String!
+    username: String!
+  }
         
 `

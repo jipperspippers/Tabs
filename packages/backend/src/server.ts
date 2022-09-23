@@ -1,4 +1,8 @@
 import { ApolloServer } from 'apollo-server-express'
+import {
+    ApolloServerPluginDrainHttpServer,
+    ApolloServerPluginLandingPageLocalDefault,
+  } from 'apollo-server-core';
 import mongoose from 'mongoose'
 import express from 'express'
 import http from 'http'
@@ -9,22 +13,29 @@ import typeDefs from "./typeDefs"
 import resolvers from "./resolvers"
 
 
-dotenv.config()
 
+dotenv.config()
+const DB_URI = String(process.env.DB_URI)
+async function connectDB(){
+    await mongoose.connect(DB_URI)
+    console.log("Successful DB connection")
+}
+
+connectDB()
 async function startApolloServer(){
     const app = express();
     const httpServer = http.createServer(app);
-
-    await mongoose.connect(`${process.env.DB_URI}`)
+    console.log(String(typeDefs))
+    console.log(String(resolvers))
     const server = new ApolloServer({
-        typeDefs: typeDefs,
-        resolvers: resolvers
-    })
-    const url = `http://localhost:${process.env.PORT}`
+      typeDefs,
+      resolvers,
+      context:{}
+    });
     await server.start();
     server.applyMiddleware({ app });
-    await new Promise<void>(resolve => httpServer.listen({ port: process.env.PORT }, resolve));
-    console.log(`🚀 Server ready at ${url}`);
+    await new Promise<void>(resolve => httpServer.listen({ port: 4000 }, resolve));
+    console.log(`🚀 Server ready at http://localhost:4000`);
 }
 
 startApolloServer()
